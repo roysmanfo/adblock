@@ -1,5 +1,10 @@
-from adshied.web.router import app as app
+from adshied.web.backend import router
 
 
 def start_web_interface(port: int = 5000):
-    app.run(port=port)
+    router.app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False,
+        use_reloader=False
+    )
