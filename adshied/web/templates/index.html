@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdShield</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/style/main.css">
+    <link rel="stylesheet" href="/static/style/dashboard.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <div class="logo">
+                <i class="bi bi-shield-shaded"></i>
+                AdShield
+            </div>
+            <div class="paths">
+                <a href="/"><i class="bi bi-layout-wtf"></i><div>Dashboard</div></a>
+                <a href="/logs"><i class="bi bi-file-earmark-text-fill"></i><div>Logs</div></a>
+                <a href="/settings"><i class="bi bi-gear-fill"></i><div>Settings</div></a>
+            </div>
+        </nav>
+
+        <main>
+            <section class="stats">
+                <div class="stat-item">
+                    <h2>{{ 0 }}</h2>
+                    <p>Blocked Requests</p>
+                </div>
+                <div class="stat-item">
+                    <h2>{{ 0 }}</h2>
+                    <p>Total Requests</p>
+                </div>
+                <div class="stat-item">
+                    <h2>{{ 0 }}</h2>
+                    <p>Unique Domains</p>
+                </div>
+            </section>
+            <section class="top-blocked-domains">
+                <h1>Most Blocked Domains</h1>
+                    <div class="table">
+                        <h4>Domain</h4>
+                        <h4>Blocked Requests</h4>
+
+                        {% for entry in top_blocked_domains %}
+                            <p>{{ entry[0] }}</p>
+                            <p>{{ entry[1] }}</p>
+                        {% endfor %}
+                    </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const blocked_ads = {{ blocked_ads or 0 }};
+        const total_requests = {{ total_requests or 0 }};
+        const unique_domains = {{ unique_domains or 0 }};
+        const stats = document.querySelectorAll('.stat-item h2');
+    
+        function animateCounter(element, target = 0, duration = 2000) {
+            const start = performance.now();
+    
+            function update(timestamp) {
+                const progress = Math.min((timestamp - start) / duration, 1);
+                const value = Math.floor(progress * target);
+                element.innerText = value.toLocaleString(); // optional: adds commas for large numbers
+    
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.innerText = target.toLocaleString(); // ensure it ends cleanly
+                }
+            }
+    
+            requestAnimationFrame(update);
+        }
+    
+        animateCounter(stats[0], blocked_ads);
+        animateCounter(stats[1], total_requests);
+        animateCounter(stats[2], unique_domains);
+    </script>
+    
+</body>
+</html>

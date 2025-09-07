@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --night:            #111;
+    --white:            #FFF;
+    --wisteria:         #b79cedff;
+    --medium-slate-blue:#7161efff;
+    --tropical-indigo:  #957fefff;
+
+    /* gradients */
+    --gradient-top:             linear-gradient(0deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-right:           linear-gradient(90deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-bottom:          linear-gradient(180deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-left:            linear-gradient(270deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-top-right:       linear-gradient(45deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-bottom-right:    linear-gradient(135deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-top-left:        linear-gradient(225deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-bottom-left:     linear-gradient(315deg, #7161efff, #957fefff, #b79cedff);
+    --gradient-radial:          radial-gradient(#7161efff,  #957fefff, #b79cedff);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--night);   
+    display: flex;
+}
+
+.main-container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background: var(--night);
+    color: var(--white);
+    width: max-content;
+    padding: 1rem 0;
+    border-radius: 10px;
+    min-width: 20vw;
+}
+
+nav .logo{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 4rem 0;
+    color: transparent;
+    background-image: var(--gradient-right);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+nav .paths {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+nav .paths div {
+    padding: 1rem 0;
+}
+
+nav .paths a:hover {
+    background: var(--white);
+    color: var(--night);
+    transition: all 250ms ease;
+}
+
+nav .paths a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+nav .paths a i {
+    font-size: 1.5rem;
+}
+
+main {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
