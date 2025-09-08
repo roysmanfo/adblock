@@ -1,4 +1,4 @@
-# Adshield
+# AdShield
 
 Adshield is an open source ad blocker that relies on DNS adblocking, 
 pattern matching and DPI to identify and block ads.
