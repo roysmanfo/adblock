@@ -36,7 +36,7 @@ The whole process is quite simple
 
 
 > [!NOTE]
-> This is still in development mode, therefore there still is quite some
+> This is still in development mode; therefore there is still is quite some
 > setup to do in order to run Fata*
 
 1. **Create a virtual environment**  
