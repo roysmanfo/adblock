@@ -25,19 +25,18 @@ for a local proxy, managable from a clean web interface
 # How it works
 The whole process is quite simple
 
-1. the request gets intercepted from adshield
-2. the Shield engine first performs a series of inpections on the request
-    - the request gets passed throug a series of scanners for Deep Packet Inspection
-    - if nothing is found, the request is confronted against a list of known signatures
-3. if the request passes all checks, it gets forwarded and you can see the response
+1. the request gets intercepted from AdShield
+2. the Shield engine first performs a series of inspections on the request
+    - the request gets passed through a series of scanners for Deep Packet Inspection
+    - if nothing is found, the request is compared against a list of known signatures
+3. if the request passes all checks, it gets forwarded, and you can see the response
 
 
 # How to run
 
 
 > [!NOTE]
-> This is still in development mode, therefore there still is quite some
-> setup to do in order to run AdShield*
+> This is still in development mode; therefore, there is still quite some setup to do in order to run AdShield*
 
 1. **Create a virtual environment**  
     - `python -m venv .venv`
