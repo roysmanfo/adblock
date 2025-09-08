@@ -1,5 +1,5 @@
 import unittest
-from adshied.shield import Shield
+from fata.shield import Shield
 
 class TestAdBlockerEngine(unittest.TestCase):
     @classmethod

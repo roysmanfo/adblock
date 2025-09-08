@@ -41,7 +41,7 @@ function App() {
       <nav>
         <div className="logo">
           <i className="bi bi-shield-shaded"></i>
-          AdShield
+          Fata
         </div>
         <div className="paths">
           <a href="/">

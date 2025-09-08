@@ -7,7 +7,7 @@ from mitmproxy import http
 
 from adshied.dpi import DPI
 
-filename = str(Path(__file__).parent.parent / "adshield.log")
+filename = str(Path(__file__).parent.parent / "fata.log")
 
 
 
@@ -22,7 +22,7 @@ class Shield:
         
         self.engine = Engine(self.filter_set, optimize=optimize)
         
-        self.logger = logging.getLogger("adshield")
+        self.logger = logging.getLogger("fata")
         self.logger.setLevel(logging.DEBUG)
         self.logger.addHandler(logging.FileHandler(filename))
         self.logger.debug(f"[*] logging to {filename}")
@@ -55,7 +55,7 @@ class Shield:
             flow.response = http.Response.make(
                 403,
 
-                b"Blocked by AdShield\n" +
+                b"Blocked by Fata\n" +
                 b"------------------------\n" +
                 b"\nmatches: " + str(result.filter).encode("utf-8") +
                 b"\nhost: " + flow.request.pretty_host.encode("utf-8") +
@@ -64,7 +64,7 @@ class Shield:
                 b"\nredirect_type: " + str(result.redirect_type).encode("utf-8") +
                 b"\nerror: " + str(result.error).encode("utf-8") +
                 b"\n\n" +
-                b"AdShield is a free and open-source adblocker.\n" +
+                b"Fata is a free and open-source adblocker.\n" +
                 b"Please consider supporting us on GitHub.\n",
 
                 http.Headers(
