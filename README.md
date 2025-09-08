@@ -31,3 +31,27 @@ The whole process is quite simple
     - if nothing is found, the request is confronted against a list of known signatures
 3. if the request passes all checks, it gets forwarded and you can see the response
 
+
+# How to run
+
+
+> [!NOTE]
+> This is still in development mode, therefore there still is quite some
+> setup to do in order to run AdShield*
+
+1. **Create a virtual environment**  
+    - `python -m venv .venv`
+    - `source .venv/bin/activate` on Linux and `./.venv/Scripts/activate` on Windows (Powershell)
+
+2. **Install dependencies**  
+    - `pip install -r requirements.txt` in the project's root 
+    - `npm i` inside `adblock/web/frontend`
+    
+3. **Activate engine** (this will also start the web backend)  
+    - run `make` in the root of the project
+
+4. **Start the web interface**
+    - run `npm run dev` inside `adblock/web/frontend`
+    - this will automatically open the web interface in the browser
+
+
