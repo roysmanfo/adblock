@@ -43,7 +43,7 @@ The whole process is quite simple
     - `python -m venv .venv`
     - `source .venv/bin/activate` on Linux and `./.venv/Scripts/activate` on Windows (Powershell)
 
-2. **Install dependencies**  
+2. **Install dependencies**
     - `pip install -r requirements.txt` in the project's root 
     - `npm i` inside `fata/web/frontend`
     
@@ -53,5 +53,6 @@ The whole process is quite simple
 4. **Start the web interface**
     - run `npm run dev` inside `fata/web/frontend`
     - this will automatically open the web interface in the browser
-
-
+> [!NOTE]
+> You will need to install mitmproxy's certificate to intercept HTTPS traffic.  
+> To do so, after you run make, visit `mitm.it` and install the certificate for your device.
