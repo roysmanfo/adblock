@@ -26,11 +26,11 @@ class LogManager:
         LogManager.write_fd = w
 
     @staticmethod
-    def read_pipe():
+    def open_read():
         return open(LogManager.read_fd, 'rt', encoding='utf-8')
 
     @staticmethod
-    def write_pipe():
+    def open_write():
         return open(LogManager.write, 'wt', encoding='utf-8')
 
     @staticmethod
